@@ -210,7 +210,7 @@
     document.getElementById("feedbackForm").addEventListener("submit", function(event) {
       event.preventDefault();  // Mencegah form submit biasa
 
-      var formData = new FormData(event.target); // Membaca form data termasuk file
+      var formData = new FormData(event.target);
 
       fetch("https://script.google.com/macros/s/AKfycbxPBdkusVszOKa0Ny25CFw5ywqEjvv0jU-IVXgK6pcy/dev", {
         method: "POST",
@@ -222,7 +222,6 @@
       })
       .catch(error => {
         console.error("Error:", error);
-        alert("Terjadi kesalahan saat mengirim form. Coba lagi.");
       });
     });
   </script>
