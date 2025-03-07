@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Umpan Balik Worksheet - Lilsmart Digital</title>
+  <style>
+    /* Style untuk kotak donasi */
+    .donasi-box {
+      background-color: #f1f1f1; /* Warna latar kotak */
+      border: 2px solid #007bff; /* Warna border */
+      padding: 20px;
+      text-align: center;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+    .donasi-box a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .donasi-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Posisi judul di tengah */
+    h2 {
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #ff6347;
+    }
+
+    /* Style untuk form dan input */
+    .form-group {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      width: 150px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+    }
+
+    /* Menyusun kolom nilai dan ceritakan pengalaman sejajar */
+    .penilaian-group {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .penilaian-group label {
+      width: 150px;
+    }
+
+    .penilaian-group input, .penilaian-group textarea {
+      width: 48%;
+    }
+
+    /* Memperbaiki tampilan secara keseluruhan */
+    .form-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Menyusun form agar rata */
+    label, input, textarea {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    /* Tambahkan sedikit animasi untuk tombol submit */
+    input[type="submit"]:active {
+      transform: scale(0.95);
+      transition: transform 0.2s ease;
+    }
+
+    /* Style teks humor */
+    .fun-text {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 18px;
+      color: #32cd32;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Memperlebar textarea */
+    textarea {
+      width: 100%;  /* Lebar 100% dari form */
+      height: 150px; /* Membuat textarea lebih tinggi */
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+    }
+
+    /* Memperlebar textarea 'Ceritakan Pengalaman Anda' secara horizontal */
+    #cerita-pengalaman {
+      width: 100%;  /* Lebar kolom lebih panjang */
+      height: 150px; /* Tetap tinggi normal */
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+    }
+
+    /* Memperlebar input file */
+    input[type="file"] {
+      width: 100%;  /* Lebar 100% dari form */
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Umpan Balik Worksheet - Lilsmart Digital</h2>
+    <p class="fun-text">✨"Yuk, kasih feedback supaya kami bisa lebih membantu dan mempermudah Anda dalam mendampingi anak belajar! ✨📚"</p>
+    <form action="https://script.google.com/macros/s/AKfycbzvdK2V3gFjwhNTWTVBi9pY4zzR89UE7WDT6ny_ipxUHrhJbOTNMDQ7uEnDd0QLTGzSNA/exec" method="POST" enctype="multipart/form-data">
+      
+      <!-- Nama dan No Telepon sejajar -->
+      <div class="form-group">
+        <div>
+          <label for="nama">Nama:</label><br>
+          <input type="text" id="nama" name="nama" required>
+        </div>
+        <div>
+          <label for="no_telepon">No Telepon:</label><br>
+          <input type="tel" id="no_telepon" name="no_telepon" required>
+        </div>
+      </div>
+
+      <!-- Pendapat tentang worksheet -->
+      <label for="pendapat">Pendapat Anda tentang worksheet ini:</label><br>
+      <textarea id="pendapat" name="pendapat" rows="6" placeholder="Tuliskan pendapat Anda di sini..." required></textarea><br><br>
+
+      <!-- Unggah Foto -->
+      <label for="foto">Unggah Foto Worksheet yang Dikerjakan:</label><br>
+      <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+
+      <!-- Efektivitas Pembelajaran dan Penilaian Sejajar -->
+      <label for="efektivitas">Seberapa efektifkah pembelajaran dengan worksheet ini? Ceritakan pengalaman Anda:</label><br>
+      <div class="penilaian-group">
+        <div>
+          <textarea id="cerita-pengalaman" name="efektivitas" placeholder="Tuliskan pengalaman Anda di sini..." required></textarea>
+        </div>
+        <div>
+          <label for="nilai">Nilai (1-5):</label><br>
+          <input type="number" id="nilai" name="nilai" min="1" max="5" required><br><br>
+          <p><i>Keterangan Penilaian:</i></p>
+          <ul>
+            <li>1 = Sangat Tidak Efektif</li>
+            <li>2 = Tidak Efektif</li>
+            <li>3 = Cukup Efektif</li>
+            <li>4 = Efektif</li>
+            <li>5 = Sangat Efektif</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Saran Perbaikan -->
+      <label for="saran">Saran untuk perbaikan:</label><br>
+      <textarea id="saran" name="saran" rows="6" placeholder="Berikan saran untuk perbaikan worksheet ini..." required></textarea><br><br>
+
+      <!-- Kritik -->
+      <label for="kritik">Kritik:</label><br>
+      <textarea id="kritik" name="kritik" rows="6" placeholder="Tuliskan kritik Anda di sini..." required></textarea><br><br>
+
+      <input type="submit" value="Kirim Umpan Balik">
+    </form>
+
+    <!-- Kotak Donasi -->
+    <div class="donasi-box">
+      <p>Dukungan Anda sangat berarti bagi kami. Jika ingin membantu, Anda bisa berdonasi di sini:</p>
+      <a href="http://lynk.id/r4hm4wati/s/q3eew4M" target="_blank">Berdonasi di sini</a>
+    </div>
+
+    <!-- Fun text -->
+    <p class="fun-text">Semoga bisa lebih seru lagi setelah umpan balik dari kamu! 🎉😜</p>
+  </div>
+
+</body>
+</html>
