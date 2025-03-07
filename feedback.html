@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Umpan Balik Worksheet - Lilsmart Digital</title>
   <style>
-    /* Style untuk form dan input */
     .form-container {
       max-width: 900px;
       margin: 0 auto;
@@ -35,37 +34,51 @@
 <body>
   <div class="form-container">
     <h2>Umpan Balik Worksheet - Lilsmart Digital</h2>
-    <form action="https://script.google.com/macros/s/AKfycbxPBdkusVszOKa0Ny25CFw5ywqEjvv0jU-IVXgK6pcy/dev" method="POST" enctype="multipart/form-data">
+    <form id="feedbackForm" method="POST" enctype="multipart/form-data">
       
-      <!-- Nama dan No Telepon sejajar -->
       <label for="nama">Nama:</label>
       <input type="text" id="nama" name="nama" required>
 
       <label for="no_telepon">No Telepon:</label>
       <input type="tel" id="no_telepon" name="no_telepon" required>
 
-      <!-- Pendapat tentang worksheet -->
       <label for="pendapat">Pendapat Anda tentang worksheet ini:</label>
       <textarea id="pendapat" name="pendapat" rows="4" required></textarea>
 
-      <!-- Unggah Foto -->
       <label for="foto">Unggah Foto Worksheet yang Dikerjakan:</label>
       <input type="file" id="foto" name="foto" accept="image/*" required>
 
-      <!-- Efektivitas Pembelajaran dan Penilaian -->
       <label for="efektivitas">Seberapa efektifkah pembelajaran dengan worksheet ini?</label>
       <textarea id="efektivitas" name="efektivitas" rows="4" required></textarea>
 
-      <!-- Saran Perbaikan -->
       <label for="saran">Saran untuk perbaikan:</label>
       <textarea id="saran" name="saran" rows="4" required></textarea>
 
-      <!-- Kritik -->
       <label for="kritik">Kritik:</label>
       <textarea id="kritik" name="kritik" rows="4" required></textarea>
 
       <input type="submit" value="Kirim Umpan Balik">
     </form>
   </div>
+
+  <script>
+    document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+      event.preventDefault();  // Mencegah form submit biasa
+
+      var formData = new FormData(event.target);
+
+      fetch("https://script.google.com/macros/s/AKfycbxPBdkusVszOKa0Ny25CFw5ywqEjvv0jU-IVXgK6pcy/dev", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert("Terima kasih atas umpan balik Anda!");
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+    });
+  </script>
 </body>
 </html>
