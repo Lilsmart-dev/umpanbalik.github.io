@@ -133,13 +133,14 @@
       border: 1px solid #ddd;
       box-sizing: border-box;
     }
+
   </style>
 </head>
 <body>
   <div class="form-container">
     <h2>Umpan Balik Worksheet - Lilsmart Digital</h2>
     <p class="fun-text">✨"Yuk, kasih feedback supaya kami bisa lebih membantu dan mempermudah Anda dalam mendampingi anak belajar! ✨📚"</p>
-    <form id="feedbackForm">
+    <form action="https://script.google.com/macros/s/AKfycbzvdK2V3gFjwhNTWTVBi9pY4zzR89UE7WDT6ny_ipxUHrhJbOTNMDQ7uEnDd0QLTGzSNA/exec" method="POST" enctype="multipart/form-data">
       
       <!-- Nama dan No Telepon sejajar -->
       <div class="form-group">
@@ -189,7 +190,7 @@
       <label for="kritik">Kritik:</label><br>
       <textarea id="kritik" name="kritik" rows="6" placeholder="Tuliskan kritik Anda di sini..." required></textarea><br><br>
 
-      <button type="button" onclick="submitForm()">Kirim Umpan Balik</button>
+      <input type="submit" value="Kirim Umpan Balik">
     </form>
 
     <!-- Kotak Donasi -->
@@ -202,42 +203,5 @@
     <p class="fun-text">Semoga bisa lebih seru lagi setelah umpan balik dari kamu! 🎉😜</p>
   </div>
 
-  <script>
-    function submitForm() {
-      // Ambil data dari formulir
-      var formData = {
-        nama: document.getElementById("nama").value,
-        no_telepon: document.getElementById("no_telepon").value,
-        pendapat: document.getElementById("pendapat").value,
-        fotoUrl: "", // Anda perlu mengunggah gambar ke layanan pihak ketiga dan mendapatkan URL
-        efektivitas: document.getElementById("cerita-pengalaman").value,
-        nilai: document.getElementById("nilai").value,
-        saran: document.getElementById("saran").value,
-        kritik: document.getElementById("kritik").value
-      };
-
-      // Kirim data ke Google Apps Script
-      fetch('https://script.google.com/macros/s/AKfycbxre624abugikkQQMjn4BalVcKH2jkbBAlZRd7-20_Z/dev', {
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text();
-      })
-      .then(data => {
-        alert(data); // Tampilkan pesan sukses
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert("Terjadi kesalahan saat mengirim data. Silakan coba lagi.");
-      });
-    }
-  </script>
 </body>
 </html>
