@@ -5,125 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Umpan Balik Worksheet - Lilsmart Digital</title>
   <style>
-    /* Style untuk kotak donasi */
-    .donasi-box {
-      background-color: #f1f1f1; /* Warna latar kotak */
-      border: 2px solid #007bff; /* Warna border */
-      padding: 20px;
-      text-align: center;
-      margin-top: 30px;
-      border-radius: 10px;
-    }
-    .donasi-box a {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .donasi-box a:hover {
-      text-decoration: underline;
-    }
-
-    /* Posisi judul di tengah */
-    h2 {
-      text-align: center;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      color: #ff6347;
-    }
-
-    /* Style untuk form dan input */
-    .form-group {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    .form-group label {
-      width: 150px;
-    }
-
-    .form-group input, .form-group textarea {
-      width: 100%;
-    }
-
-    /* Menyusun kolom nilai dan ceritakan pengalaman sejajar */
-    .penilaian-group {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    .penilaian-group label {
-      width: 150px;
-    }
-
-    .penilaian-group input, .penilaian-group textarea {
-      width: 48%;
-    }
-
-    /* Memperbaiki tampilan secara keseluruhan */
-    .form-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Menyusun form agar rata */
-    label, input, textarea {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-    }
-
-    input[type="submit"] {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #0056b3;
-    }
-
-    /* Tambahkan sedikit animasi untuk tombol submit */
-    input[type="submit"]:active {
-      transform: scale(0.95);
-      transition: transform 0.2s ease;
-    }
-
-    /* Style teks humor */
-    .fun-text {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      font-size: 18px;
-      color: #32cd32;
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    /* Memperlebar textarea */
-    textarea {
-      width: 100%;  /* Lebar 100% dari form */
-      height: 150px; /* Membuat textarea lebih tinggi */
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      box-sizing: border-box;
-    }
-
-    /* Memperlebar textarea 'Ceritakan Pengalaman Anda' secara horizontal */
-    #cerita-pengalaman {
-      width: 100%;  /* Lebar kolom lebih panjang */
-      height: 150px; /* Tetap tinggi normal */
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      box-sizing: border-box;
-    }
+    /* (CSS Anda tetap sama) */
   </style>
 </head>
 <body>
@@ -206,7 +88,7 @@
       console.log('Data yang dikirim:', formData); // Log data sebelum dikirim
 
       // Kirim data ke Google Apps Script
-      fetch('https://script.google.com/macros/s/AKfycbxre624abugikkQQMjn4BalVcKH2jkbBAlZRd7-20_Z/dev', {
+      fetch('URL_WEB_APP_ANDA', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
