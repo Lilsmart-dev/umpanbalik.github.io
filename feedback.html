@@ -12,7 +12,7 @@
   <div class="form-container">
     <h2>Umpan Balik Worksheet - Lilsmart Digital</h2>
     <p class="fun-text">✨"Yuk, kasih feedback supaya kami bisa lebih membantu dan mempermudah Anda dalam mendampingi anak belajar! ✨📚"</p>
-    <form id="feedbackForm">
+    <form id="feedbackForm" action="https://script.google.com/macros/s/AKfycbxre624abugikkQQMjn4BalVcKH2jkbBAlZRd7-20_Z/dev" method="POST" enctype="multipart/form-data">
       
       <!-- Nama dan No Telepon sejajar -->
       <div class="form-group">
@@ -58,7 +58,7 @@
       <label for="kritik">Kritik:</label><br>
       <textarea id="kritik" name="kritik" rows="6" placeholder="Tuliskan kritik Anda di sini..." required></textarea><br><br>
 
-      <button type="button" onclick="submitForm()">Kirim Umpan Balik</button>
+      <input type="submit" value="Kirim Umpan Balik">
     </form>
 
     <!-- Kotak Donasi -->
@@ -73,7 +73,9 @@
 
   <script>
     // Fungsi untuk mengirim data ke Google Apps Script
-    function submitForm() {
+    function submitForm(event) {
+      event.preventDefault(); // Mencegah formulir di-submit secara default
+
       // Ambil data dari formulir
       const formData = {
         nama: document.getElementById('nama').value,
@@ -88,7 +90,7 @@
       console.log('Data yang dikirim:', formData); // Log data sebelum dikirim
 
       // Kirim data ke Google Apps Script
-      fetch('URL_WEB_APP_ANDA', {
+      fetch('https://script.google.com/macros/s/AKfycbxre624abugikkQQMjn4BalVcKH2jkbBAlZRd7-20_Z/dev', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
@@ -109,6 +111,9 @@
         alert('Terjadi kesalahan saat mengirim data. Silakan coba lagi.');
       });
     }
+
+    // Hubungkan fungsi submitForm ke event submit formulir
+    document.getElementById('feedbackForm').addEventListener('submit', submitForm);
   </script>
 </body>
 </html>
